@@ -1,0 +1,432 @@
+var tmpTbl = [
+  {
+    "field": "nbhd",
+    "col_1": "Woodley Park",
+    "col_2": "Woodley Park",
+    "col_3": "Woodley Park",
+    "col_4": "Woodley Park",
+    "col_5": "Woodley Park",
+    "col_6": "Woodley Park",
+    "col_7": "Woodley Park"
+  },
+  {
+    "field": "count",
+    "col_1": 10,
+    "col_2": 16,
+    "col_3": 35,
+    "col_4": 45,
+    "col_5": 18,
+    "col_6": 20,
+    "col_7": 9
+  },
+  {
+    "field": "fin_gov_property_tax",
+    "col_1": 1819,
+    "col_2": 13370.5,
+    "col_3": 9027,
+    "col_4": 2640,
+    "col_5": 19764.5,
+    "col_6": 4195,
+    "col_7": 7080
+  },
+  {
+    "field": "fin_gov_salepoint_annualtax",
+    "col_1": 1955.6,
+    "col_2": 11950.92,
+    "col_3": 7829.78,
+    "col_4": 2546.52,
+    "col_5": 17238.47,
+    "col_6": 4192.12,
+    "col_7": 6640.54
+  },
+  {
+    "field": "fin_gov_salepoint_assessment",
+    "col_1": 230070,
+    "col_2": 1475090,
+    "col_3": 980130,
+    "col_4": 346090,
+    "col_5": 2317495,
+    "col_6": 510710,
+    "col_7": 815790
+  },
+  {
+    "field": "fin_land_new_land_value",
+    "col_1": 67365,
+    "col_2": 706195,
+    "col_3": 505390,
+    "col_4": 115560,
+    "col_5": 1090950,
+    "col_6": 155190,
+    "col_7": 490900
+  },
+  {
+    "field": "fin_land_old_impr_value",
+    "col_1": 147900,
+    "col_2": 1030445,
+    "col_3": 618220,
+    "col_4": 242120,
+    "col_5": 2023505,
+    "col_6": 364530,
+    "col_7": 462210
+  },
+  {
+    "field": "fin_land_old_land_value",
+    "col_1": 63385,
+    "col_2": 567985,
+    "col_3": 362930,
+    "col_4": 103770,
+    "col_5": 1045155,
+    "col_6": 156230,
+    "col_7": 346270
+  },
+  {
+    "field": "fin_land_old_total_value",
+    "col_1": 211285,
+    "col_2": 1512440,
+    "col_3": 1036020,
+    "col_4": 345890,
+    "col_5": 2937955,
+    "col_6": 520760,
+    "col_7": 808480
+  },
+  {
+    "field": "fin_land_prop_land_value",
+    "col_1": 65552.05686,
+    "col_2": 708142.972,
+    "col_3": 530632.0082,
+    "col_4": 115501.0374,
+    "col_5": 1074054.02,
+    "col_6": 168733.9728,
+    "col_7": 470391.0335
+  },
+  {
+    "field": "fin_land_salepoint_newland",
+    "col_1": 67455,
+    "col_2": 399630,
+    "col_3": 352460,
+    "col_4": 103980,
+    "col_5": 1045155,
+    "col_6": 156230,
+    "col_7": 352460
+  },
+  {
+    "field": "fin_land_salepoint_oldland",
+    "col_1": 69215,
+    "col_2": 385345,
+    "col_3": 333080,
+    "col_4": 104030,
+    "col_5": 979495,
+    "col_6": 152090,
+    "col_7": 333080
+  },
+  {
+    "field": "fin_land_salepoint_phaseland",
+    "col_1": 69020,
+    "col_2": 410190,
+    "col_3": 362860,
+    "col_4": 103830,
+    "col_5": 980230,
+    "col_6": 153210,
+    "col_7": 362860
+  },
+  {
+    "field": "fin_total_new_impr_value",
+    "col_1": 157185,
+    "col_2": 1050825,
+    "col_3": 674310,
+    "col_4": 269630,
+    "col_5": 1822225,
+    "col_6": 362110,
+    "col_7": 508720
+  },
+  {
+    "field": "fin_total_new_total_value",
+    "col_1": 224550,
+    "col_2": 1743780,
+    "col_3": 1251650,
+    "col_4": 385190,
+    "col_5": 2760910,
+    "col_6": 517300,
+    "col_7": 976120
+  },
+  {
+    "field": "fin_total_price",
+    "col_1": 218500,
+    "col_2": 1757500,
+    "col_3": 1280000,
+    "col_4": 385000,
+    "col_5": 2735000,
+    "col_6": 549200,
+    "col_7": 962050
+  },
+  {
+    "field": "fin_total_price_size",
+    "col_1": 469.1727134,
+    "col_2": 579.2149221,
+    "col_3": 611.3723814,
+    "col_4": 479.4398496,
+    "col_5": 619.8426787,
+    "col_6": 501.8779343,
+    "col_7": 579.9278846
+  },
+  {
+    "field": "fin_total_prop_value",
+    "col_1": 152947.9431,
+    "col_2": 1090155.347,
+    "col_3": 720910.5622,
+    "col_4": 269500,
+    "col_5": 1799084.014,
+    "col_6": 384443.6295,
+    "col_7": 506368.8202
+  },
+  {
+    "field": "fin_total_sale_yr",
+    "col_1": 2013,
+    "col_2": 2014,
+    "col_3": 2013,
+    "col_4": 2013,
+    "col_5": 2013,
+    "col_6": 2014,
+    "col_7": 2014
+  },
+  {
+    "field": "fin_total_salepoint_newimpr",
+    "col_1": 157405,
+    "col_2": 1171340,
+    "col_3": 623290,
+    "col_4": 242610,
+    "col_5": 1291160,
+    "col_6": 364530,
+    "col_7": 476190
+  },
+  {
+    "field": "fin_total_salepoint_newtotal",
+    "col_1": 224860,
+    "col_2": 1570970,
+    "col_3": 1003760,
+    "col_4": 346590,
+    "col_5": 2301130,
+    "col_6": 520760,
+    "col_7": 828650
+  },
+  {
+    "field": "fin_total_salepoint_oldimpr",
+    "col_1": 161500,
+    "col_2": 1103000,
+    "col_3": 586320,
+    "col_4": 242750,
+    "col_5": 1401055,
+    "col_6": 354870,
+    "col_7": 454730
+  },
+  {
+    "field": "fin_total_salepoint_oldtotal",
+    "col_1": 230715,
+    "col_2": 1498845,
+    "col_3": 928700,
+    "col_4": 346780,
+    "col_5": 2374160,
+    "col_6": 506960,
+    "col_7": 787810
+  },
+  {
+    "field": "fin_total_salepoint_phasebuild",
+    "col_1": 159380,
+    "col_2": 1005920,
+    "col_3": 595400,
+    "col_4": 242260,
+    "col_5": 1351745,
+    "col_6": 357500,
+    "col_7": 452930
+  },
+  {
+    "field": "fin_total_salepoint_saleprice",
+    "col_1": 223000,
+    "col_2": 1787500,
+    "col_3": 1300000,
+    "col_4": 359000,
+    "col_5": 2585000,
+    "col_6": 582500,
+    "col_7": 995000
+  },
+  {
+    "field": "geo_library_distance",
+    "col_1": 758.22,
+    "col_2": 815.175,
+    "col_3": 836.28,
+    "col_4": 341.13,
+    "col_5": 1127.475,
+    "col_6": 844.04,
+    "col_7": 779.83
+  },
+  {
+    "field": "geo_metro_distance",
+    "col_1": 273.09,
+    "col_2": 866,
+    "col_3": 383.75,
+    "col_4": 473.2,
+    "col_5": 656.355,
+    "col_6": 190.44,
+    "col_7": 337.04
+  },
+  {
+    "field": "geo_metrobus_distance",
+    "col_1": 54.215,
+    "col_2": 119.775,
+    "col_3": 140.51,
+    "col_4": 83.13,
+    "col_5": 164.715,
+    "col_6": 109.18,
+    "col_7": 109.18
+  },
+  {
+    "field": "geo_pop_2012",
+    "col_1": 246.5,
+    "col_2": 284,
+    "col_3": 284,
+    "col_4": 284,
+    "col_5": 165,
+    "col_6": 246.5,
+    "col_7": 284
+  },
+  {
+    "field": "geo_pop_2018",
+    "col_1": 260.25,
+    "col_2": 328.1666667,
+    "col_3": 328.1666667,
+    "col_4": 328.1666667,
+    "col_5": 352,
+    "col_6": 260.25,
+    "col_7": 328.1666667
+  },
+  {
+    "field": "geo_prop",
+    "col_1": 3.333380709,
+    "col_2": 2.578672831,
+    "col_3": 2.463640379,
+    "col_4": 3.333333333,
+    "col_5": 2.795193862,
+    "col_6": 3.333333333,
+    "col_7": 2.109360096
+  },
+  {
+    "field": "prop_current_condition",
+    "col_1": 0,
+    "col_2": 67,
+    "col_3": 67,
+    "col_4": 0,
+    "col_5": 83,
+    "col_6": 67,
+    "col_7": 67
+  },
+  {
+    "field": "prop_current_grade",
+    "col_1": 0,
+    "col_2": 58,
+    "col_3": 50,
+    "col_4": 0,
+    "col_5": 75,
+    "col_6": 42,
+    "col_7": 50
+  },
+  {
+    "field": "prop_current_size",
+    "col_1": 460.5,
+    "col_2": 2932,
+    "col_3": 1975,
+    "col_4": 800,
+    "col_5": 4926,
+    "col_6": 1065,
+    "col_7": 1664
+  },
+  {
+    "field": "prop_num_bedrooms",
+    "col_1": 0,
+    "col_2": 5,
+    "col_3": 4,
+    "col_4": 1,
+    "col_5": 6,
+    "col_6": 2,
+    "col_7": 3
+  },
+  {
+    "field": "prop_num_rooms",
+    "col_1": 2,
+    "col_2": 10,
+    "col_3": 8,
+    "col_4": 3,
+    "col_5": 12,
+    "col_6": 5,
+    "col_7": 7
+  },
+  {
+    "field": "prop_num_units",
+    "col_1": 1,
+    "col_2": 0,
+    "col_3": 0,
+    "col_4": 1,
+    "col_5": 0,
+    "col_6": 1,
+    "col_7": 0
+  },
+  {
+    "field": "prop_stories",
+    "col_1": 0,
+    "col_2": 2.5,
+    "col_3": 2.25,
+    "col_4": 0,
+    "col_5": 2.5,
+    "col_6": 2,
+    "col_7": 2
+  },
+  {
+    "field": "prop_wall_height",
+    "col_1": 0,
+    "col_2": 0,
+    "col_3": 0,
+    "col_4": 0,
+    "col_5": 9,
+    "col_6": 0,
+    "col_7": 0
+  },
+  {
+    "field": "prop_year_built",
+    "col_1": 0,
+    "col_2": 1923,
+    "col_3": 1924,
+    "col_4": 0,
+    "col_5": 1951,
+    "col_6": 1925,
+    "col_7": 1925
+  },
+  {
+    "field": "prop_year_remodeled",
+    "col_1": 1980,
+    "col_2": 2004.5,
+    "col_3": 2004,
+    "col_4": 1975,
+    "col_5": 2004.5,
+    "col_6": 1998,
+    "col_7": 2008
+  },
+  {
+    "field": "prop_yr_sin_built",
+    "col_1": 0,
+    "col_2": 90,
+    "col_3": 89,
+    "col_4": 0,
+    "col_5": 62,
+    "col_6": 89,
+    "col_7": 88
+  },
+  {
+    "field": "prop_yr_sin_re",
+    "col_1": 33,
+    "col_2": 8.5,
+    "col_3": 10,
+    "col_4": 38,
+    "col_5": 8.5,
+    "col_6": 16,
+    "col_7": 5
+  }
+];

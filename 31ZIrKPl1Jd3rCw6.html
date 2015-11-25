@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)http://run.plnkr.co/31ZIrKPl1Jd3rCw6/ -->
+<html ng-app="ui.bootstrap.demo" class="ng-scope"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    <script src="./31ZIrKPl1Jd3rCw6_files/angular.js"></script><style type="text/css"></style><style type="text/css"></style>
+    <script src="./31ZIrKPl1Jd3rCw6_files/angular-animate.js"></script>
+    <script src="./31ZIrKPl1Jd3rCw6_files/ui-bootstrap-tpls-0.14.3.js"></script>
+    <script src="./31ZIrKPl1Jd3rCw6_files/example.js"></script>
+    <link href="./31ZIrKPl1Jd3rCw6_files/bootstrap.min.css" rel="stylesheet">
+  <style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style><link rel="stylesheet" type="text/css" href="chrome-extension://pkehgijcmpdhfbdbbnkijodmdjhbjlgp/skin/socialwidgets.css"></head>
+  <body>
+
+<div ng-controller="AccordionDemoCtrl" class="ng-scope">
+  <script type="text/ng-template" id="group-template.html">
+    <div class="panel {{panelClass || 'panel-default'}}">
+      <div class="panel-heading">
+        <h4 class="panel-title" style="color:#fa39c3">
+          <a href tabindex="0" class="accordion-toggle" ng-click="toggleOpen()" uib-accordion-transclude="heading"><span
+            ng-class="{'text-muted': isDisabled}">{{heading}}</span></a>
+        </h4>
+      </div>
+      <div class="panel-collapse collapse" uib-collapse="!isOpen">
+        <div class="panel-body" style="text-align: right" ng-transclude></div>
+      </div>
+    </div>
+  </script>
+
+  <p>
+    <button type="button" class="btn btn-default btn-sm" ng-click="status.open = !status.open">Toggle last panel</button>
+    <button type="button" class="btn btn-default btn-sm" ng-click="status.isFirstDisabled = ! status.isFirstDisabled">Enable / Disable first panel</button>
+  </p>
+
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" ng-model="oneAtATime" class="ng-pristine ng-untouched ng-valid">
+      Open only one at a time
+    </label>
+  </div>
+  <uib-accordion close-others="oneAtATime"><div class="panel-group" ng-transclude="">
+    <div class="panel panel-default panel-open" heading="Static Header, initially expanded" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
+  <div class="panel-heading" ng-keypress="toggleOpen($event)">
+    <h4 class="panel-title">
+      <a href="" tabindex="0" class="accordion-toggle" ng-click="toggleOpen()" uib-accordion-transclude="heading"><span ng-class="{&#39;text-muted&#39;: isDisabled}" class="ng-binding">Static Header, initially expanded</span></a>
+    </h4>
+  </div>
+  <div class="panel-collapse in collapse" uib-collapse="!isOpen" aria-expanded="true" aria-hidden="false" style="height: auto;">
+	  <div class="panel-body" ng-transclude=""><span class="ng-scope">
+      This content is straight in the template.
+    </span></div>
+  </div>
+</div>
+    <!-- ngRepeat: group in groups --><div class="panel panel-default" heading="Dynamic Group Header - 1" ng-repeat="group in groups">
+  <div class="panel-heading" ng-keypress="toggleOpen($event)">
+    <h4 class="panel-title">
+      <a href="" tabindex="0" class="accordion-toggle" ng-click="toggleOpen()" uib-accordion-transclude="heading"><span ng-class="{&#39;text-muted&#39;: isDisabled}" class="ng-binding">Dynamic Group Header - 1</span></a>
+    </h4>
+  </div>
+  <div class="panel-collapse collapse" uib-collapse="!isOpen" aria-expanded="false" aria-hidden="true" style="height: 0px;">
+	  <div class="panel-body" ng-transclude=""><span class="ng-binding ng-scope">
+      Dynamic Group Body - 1
+    </span></div>
+  </div>
+</div><!-- end ngRepeat: group in groups --><div class="panel panel-default" heading="Dynamic Group Header - 2" ng-repeat="group in groups">
+  <div class="panel-heading" ng-keypress="toggleOpen($event)">
+    <h4 class="panel-title">
+      <a href="" tabindex="0" class="accordion-toggle" ng-click="toggleOpen()" uib-accordion-transclude="heading"><span ng-class="{&#39;text-muted&#39;: isDisabled}" class="ng-binding">Dynamic Group Header - 2</span></a>
+    </h4>
+  </div>
+  <div class="panel-collapse collapse" uib-collapse="!isOpen" aria-expanded="false" aria-hidden="true" style="height: 0px;">
+	  <div class="panel-body" ng-transclude=""><span class="ng-binding ng-scope">
+      Dynamic Group Body - 2
+    </span></div>
+  </div>
+</div><!-- end ngRepeat: group in groups -->
+    <div class="panel panel-default" heading="Dynamic Body Content">
+  <div class="panel-heading" ng-keypress="toggleOpen($event)">
+    <h4 class="panel-title">
+      <a href="" tabindex="0" class="accordion-toggle" ng-click="toggleOpen()" uib-accordion-transclude="heading"><span ng-class="{&#39;text-muted&#39;: isDisabled}" class="ng-binding">Dynamic Body Content</span></a>
+    </h4>
+  </div>
+  <div class="panel-collapse collapse" uib-collapse="!isOpen" aria-expanded="false" aria-hidden="true" style="height: 0px;">
+	  <div class="panel-body" ng-transclude="">
+      <p class="ng-scope">The body of the uib-accordion group grows to fit the contents</p>
+      <button type="button" class="btn btn-default btn-sm ng-scope" ng-click="addItem()">Add Item</button>
+      <!-- ngRepeat: item in items --><div ng-repeat="item in items" class="ng-binding ng-scope">Item 1</div><!-- end ngRepeat: item in items --><div ng-repeat="item in items" class="ng-binding ng-scope">Item 2</div><!-- end ngRepeat: item in items --><div ng-repeat="item in items" class="ng-binding ng-scope">Item 3</div><!-- end ngRepeat: item in items -->
+    </div>
+  </div>
+</div>
+    <div class="panel panel-default" heading="Custom template" template-url="group-template.html">
+      <div class="panel-heading">
+        <h4 class="panel-title" style="color:#fa39c3">
+          <a href="" tabindex="0" class="accordion-toggle" ng-click="toggleOpen()" uib-accordion-transclude="heading"><span ng-class="{&#39;text-muted&#39;: isDisabled}" class="ng-binding">Custom template</span></a>
+        </h4>
+      </div>
+      <div class="panel-collapse collapse" uib-collapse="!isOpen" aria-expanded="false" aria-hidden="true" style="height: 0px;">
+        <div class="panel-body" style="text-align: right" ng-transclude=""><span class="ng-scope">
+      Hello
+    </span></div>
+      </div>
+    </div>
+    <div class="panel panel-danger" heading="Delete account" panel-class="panel-danger">
+  <div class="panel-heading" ng-keypress="toggleOpen($event)">
+    <h4 class="panel-title">
+      <a href="" tabindex="0" class="accordion-toggle" ng-click="toggleOpen()" uib-accordion-transclude="heading"><span ng-class="{&#39;text-muted&#39;: isDisabled}" class="ng-binding">Delete account</span></a>
+    </h4>
+  </div>
+  <div class="panel-collapse collapse" uib-collapse="!isOpen" aria-expanded="false" aria-hidden="true" style="height: 0px;">
+	  <div class="panel-body" ng-transclude="">
+      <p class="ng-scope">Please, to delete your account, click the button below</p>
+      <button class="btn btn-danger ng-scope">Delete</button>
+    </div>
+  </div>
+</div>
+    <div class="panel panel-default" is-open="status.open">
+  <div class="panel-heading" ng-keypress="toggleOpen($event)">
+    <h4 class="panel-title">
+      <a href="" tabindex="0" class="accordion-toggle" ng-click="toggleOpen()" uib-accordion-transclude="heading"><span ng-class="{&#39;text-muted&#39;: isDisabled}" class="ng-binding"><span class="ng-scope">
+        I can have markup, too! </span><i class="pull-right glyphicon ng-scope glyphicon-chevron-right" ng-class="{&#39;glyphicon-chevron-down&#39;: status.open, &#39;glyphicon-chevron-right&#39;: !status.open}"></i>
+      </span></a>
+    </h4>
+  </div>
+  <div class="panel-collapse collapse" uib-collapse="!isOpen" aria-expanded="false" aria-hidden="true" style="height: 0px;">
+	  <div class="panel-body" ng-transclude="">
+      <uib-accordion-heading class="ng-scope"></uib-accordion-heading><span class="ng-scope">
+      This is just some content to illustrate fancy headings.
+    </span></div>
+  </div>
+</div>
+  </div></uib-accordion>
+</div>
+  
+
+</body></html>
